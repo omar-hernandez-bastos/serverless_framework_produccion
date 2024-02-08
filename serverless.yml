@@ -86,6 +86,9 @@ functions:
                 filename: true
   thumbGenerator:
     handler: thumbnail/handler.thumbnailGenerator
+    layers:
+      - { Ref: BaseLambdaLayer }
+    #        - arn:aws:lambda:us-east-1:488633441181:layer:layer-for-serverless-platzi
     package:
       patterns:
         - "thumbnail/handler.js"
@@ -182,6 +185,16 @@ plugins:
   # - serverless-domain-manager
 
 package:
-  individually: false
+  individually: true
   patterns:
-    - "*/**"
+    - "!*/**"
+    - "!nodejs*"
+    - "!*.zip"
+
+layers:
+  base:
+    name: "prd-dependencies"
+    compatibleRuntimes:
+      - nodejs14.x
+    package:
+      artifact: app/nodejs.zip
