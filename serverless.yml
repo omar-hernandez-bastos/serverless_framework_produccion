@@ -11,7 +11,7 @@ provider:
       statements:
         - Effect: Allow
           Action: dynamodb:*
-          Resource: arn:aws:dynamodb:us-east-1:471893938953:table/usersTable
+          Resource: arn:aws:dynamodb:us-east-1:488633441181:table/usersTable
         - Effect: Allow
           Action: s3:*
           Resource: arn:aws:s3:::bucket-serverless-course-omar-hernandez-bastos-123213/*
