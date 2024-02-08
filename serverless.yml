@@ -75,6 +75,10 @@ functions:
               paths:
                 id: true
   signedURL:
+    handler: signedurl/handler.signedS3URL
+    package:
+      patterns:
+        - "signedurl/handler.js"
     events:
       - http:
           path: signedurl
